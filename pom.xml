@@ -9,6 +9,7 @@
 		<module>netto-schedule-api</module>
 		<module>netto-schedule-jdbc</module>
 		<module>netto-schedule</module>
+		<module>netto-schedule-demo</module>
 	</modules>
 	<properties>
 		<log4j.version>1.2.17</log4j.version>
@@ -41,6 +42,11 @@
 			<dependency>
 				<groupId>com.netto</groupId>
 				<artifactId>netto-schedule-jdbc</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netto</groupId>
+				<artifactId>netto-schedule</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
