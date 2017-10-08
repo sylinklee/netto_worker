@@ -7,14 +7,15 @@
     	http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-		
+
 	<bean class="com.netto.server.bean.ServiceBean">
-		 <property name="ref" value="helloScheduleImpl"/>
-		 <property name="serviceName" value="helloSchedule"/>
+		<property name="refName" value="helloScheduleImpl" />
+		<property name="serviceName" value="helloSchedule" />
+		<property name="timeout" value="100000" />
 	</bean>
-	
+
 	<bean class="com.netto.server.NettyServer">
-		<property name="port" value="${netto.port}"/>	
+		<property name="serviceApp" value="${netto.serviceApp}" />
+		<property name="port" value="${netto.port}" />
 	</bean>
-	
 </beans>

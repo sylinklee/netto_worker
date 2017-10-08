@@ -17,11 +17,6 @@
         <result property="remark" column="remark" jdbcType="VARCHAR"/>
         <result property="fingerprint" column="fingerprint" jdbcType="VARCHAR"/>
     </resultMap>
-    <resultMap id="monitorDomain" type="com.netto.schedule.monitor.ScheduleMonitorDTO">
-        <result property="backlogCount" column="backlogCount"/>
-        <result property="errorCount" column="errorCount"/>
-    </resultMap>
-
 
     <select id="queryExecuteTasks" resultMap="taskDomain"
             resultType="com.netto.schedule.domain.ScheduleTask"
@@ -129,13 +124,6 @@
         SELECT task_type, table_fix FROM schedule_tablefix
     </select>
 
-    <select id="queryMonitorCount" resultMap="monitorDomain">
-        SELECT
-        (SELECT COUNT(1) FROM schedule_task_${tableFix} WHERE task_type=#{taskType} and STATUS =0) AS backlogCount,
-        (SELECT COUNT(1) FROM schedule_task_${tableFix} WHERE task_type=#{taskType} and  STATUS =10
-          AND execute_count &gt;= #{dataRetryCount,jdbcType=INTEGER}
-        ) AS errorCount
-    </select>
     <select id="queryByFingerprint" parameterType="java.lang.String" resultMap="taskDomain">
       SELECT r_id,
             create_time,

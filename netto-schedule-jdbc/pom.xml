@@ -44,7 +44,6 @@
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>
