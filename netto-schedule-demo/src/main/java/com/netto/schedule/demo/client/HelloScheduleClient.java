@@ -29,7 +29,7 @@ public class HelloScheduleClient {
 		param.setFetchCount(100);
 		param.setExecuteCount(10);
 		param.setDataRetryCount(10);
-		param.setRetryTimeInterval(20 * 1000);
+		param.setRetryTimeInterval(20);
 		IScheduleTaskProcess taskProcess = (IScheduleTaskProcess) refer.getObject();
 		while (true) {
 			int count = taskProcess.execute(param, 0);
