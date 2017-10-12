@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 
 import com.netto.client.bean.ReferenceBean;
 import com.netto.client.router.ServiceRouterFactory;
-import com.netto.core.context.ServiceAddressGroup;
+import com.netto.core.context.ServerAddressGroup;
 import com.netto.schedule.IScheduleTaskProcess;
 import com.netto.schedule.ScheduleParam;
 
@@ -13,9 +13,9 @@ public class HelloScheduleClient {
 
 	public static void main(String[] args) throws Exception {
 		ServiceRouterFactory routerFactory = new ServiceRouterFactory();
-		ServiceAddressGroup serverGroup = new ServiceAddressGroup();
-		serverGroup.setServiceApp("netto-schedule-demo");
-		serverGroup.setServiceGroup("base");
+		ServerAddressGroup serverGroup = new ServerAddressGroup();
+		serverGroup.setServerApp("netto-schedule-demo");
+		serverGroup.setServerGroup("base");
 		serverGroup.setServers("127.0.0.1:23456");
 		routerFactory.setServerGroup(serverGroup);
 
